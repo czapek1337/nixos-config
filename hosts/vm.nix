@@ -3,11 +3,11 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/f71acc34-ebdd-447f-bb3d-24e674733e72";
+      device = "/dev/disk/by-label/root";
       fsType = "ext4";
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/3864-3A91";
+      device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
   };
