@@ -35,17 +35,6 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    nano # Fuck vim
-    wget
-  ];
-
-  programs.nano.nanorc = ''
-    set tabsize 2
-    set tabstospaces
-    set autoindent
-  '';
-
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
