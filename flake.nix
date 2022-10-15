@@ -5,16 +5,22 @@
     vscode-server.url = "github:msteen/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs, limine, vscode-server } : with nixpkgs; {
-    nixosConfigurations = {
-      nixos-vm = lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          limine.nixosModule
-          vscode-server.nixosModule
-          ./hosts/vm.nix
-        ];
+  outputs = {
+    self,
+    nixpkgs,
+    limine,
+    vscode-server,
+  }:
+    with nixpkgs; {
+      nixosConfigurations = {
+        nixos-vm = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            limine.nixosModule
+            vscode-server.nixosModule
+            ./hosts/vm.nix
+          ];
+        };
       };
     };
-  };
 }
